@@ -1,0 +1,20 @@
+@startuml
+Browser -> Server: Request
+activate Server
+
+Server -> "API A":
+activate "API A"
+
+Server -> "API B":
+activate "API B"
+
+Server <-- "API B":
+deactivate "API B"
+
+Server <-- "API A":
+deactivate "API A"
+
+
+Browser <-- Server: Response
+deactivate Server
+@enduml
